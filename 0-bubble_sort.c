@@ -10,11 +10,11 @@
 
 void array_swap(int *array, int a, int b)
 {
-    int temp;
+	int temp;
 
-    temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
+	temp = array[a];
+	array[a] = array[b];
+	array[b] = temp;
 }
 
 /**
@@ -24,20 +24,19 @@ void array_swap(int *array, int a, int b)
  */
 void bubble_sort(int *array, size_t size)
 {
-    unsigned int i, newnum, temp;
+	unsigned int i, newnum, temp;
 
-    do
-    {
-        newnum = 0;
-        for (i = 1; i < size; i++)
-        {
-            if (array[i - 1] > array[i])
-            {
-                array_swap(array, i - 1, i);
-                newnum = i;
-                print_array(array, size);
-            }
-        }
-        temp = newnum;
-    } while (temp >= 1);
+	do {
+		newnum = 0;
+		for (i = 1; i < size; i++)
+		{
+			if (array[i - 1] > array[i])
+			{
+				array_swap(array, i - 1, i);
+				newnum = i;
+				print_array(array, size);
+			}
+		}
+		temp = newnum;
+	} while (temp >= 1);
 }
