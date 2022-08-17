@@ -14,21 +14,20 @@ void insertion_sort_list(listint_t **list)
 		len++;
 		curr = curr->next;
 	}
-	curr = *list;
+	curr = (*list)->next;
 
 	if (len < 2)
 		return;
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
-		curr = curr->next;
 		temp = curr->next;
-		while(curr->n < curr->prev->n)
+		while(curr->prev && curr->n < curr->prev->n)
 		{
-			list_swap(*list, curr);
+			list_swap(list, curr);
 			print_list(*list);
 		}
-		curr = temp->prev;
+		curr = temp;
 	}
 }
 
@@ -37,43 +36,25 @@ void insertion_sort_list(listint_t **list)
  * @list: list to swap
  * @curr: node to swap with previous node
  */
-void list_swap(listint_t *list, listint_t *curr)
+void list_swap(listint_t **list, listint_t *curr)
 {
 	listint_t *prevNode = curr->prev;
 
-	if (prevNode->prev == NULL && curr->next)
-	{
-		curr->prev = NULL;
+	curr->prev = NULL;
+	if (prevNode->prev)
+		curr->prev = prevNode->prev;
+
+	if (curr->next)
 		curr->next->prev = prevNode;
-		prevNode->next = curr->next;
-		curr->next = prevNode;
-		list = curr;
-		prevNode->prev = curr;
-		return;
-	}
-	if (prevNode->prev && curr->next)
-	{
-		curr->prev = prevNode->prev;
-		curr->next->prev = prevNode;
-		prevNode->next = curr->next;
-		curr->next = prevNode;
+
+	prevNode->next = curr->next;
+
+	curr->next = prevNode;
+
+	if (!prevNode->prev)
+		*list = curr;
+	if (prevNode->prev)
 		prevNode->prev->next = curr;
-		prevNode->prev = curr;
-	}
-	if (curr->next == NULL && prevNode->prev)
-	{
-		curr->prev = prevNode->prev;
-		prevNode->next = curr->next;
-		curr->next = prevNode;
-		prevNode->prev->next = curr;
-		prevNode->prev = curr;
-	}
-	if (list->n > list->next->n)
-	{
-		curr->prev = prevNode->prev;
-		prevNode->next = curr->next;
-		curr->next = prevNode;
-		list = curr;
-		prevNode->prev = curr;
-	}
+
+	prevNode->prev = curr;
 }
