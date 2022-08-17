@@ -7,8 +7,12 @@
 void insertion_sort_list(listint_t **list)
 {
 	int i, len = 0;
-	listint_t *temp, *curr = *list;
+	listint_t *temp, *curr;
 
+	if (!list)
+		return;
+
+	curr = *list;
 	while (curr)
 	{
 		len++;
