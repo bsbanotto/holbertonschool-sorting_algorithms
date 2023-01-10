@@ -1,4 +1,4 @@
-#include sort.h
+#include "sort.h"
 
 /**
  * merge_sort - Implementation of top-down merge sort algorithm
@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void merge_sort(int *array, size_t size)
+void merge_sort(__attribute__((unused))int *array, __attribute__((unused)) size_t size)
 {
 
 }
