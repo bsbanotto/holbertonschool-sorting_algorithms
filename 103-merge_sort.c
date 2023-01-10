@@ -11,7 +11,7 @@
 void merge_sort(int *array, size_t size)
 {
 	int *temp_array = malloc(sizeof(array[0]) * size);
-	print_my_array(array, 0, size / 2);
+	/* print_my_array(array, 0, size / 2); */
 	copy_array(array, 0, size, temp_array);
 	print_my_array(temp_array, 0, size);
 	free(temp_array);
