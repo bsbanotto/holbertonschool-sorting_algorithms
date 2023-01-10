@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* Structure Definition */
 
@@ -37,5 +38,7 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
 void merge_sort(int *array, size_t size);
+void print_my_array(int *array, int start, int end);
+void copy_array(int *array, int start_index, int end_index, int *temp_array);
 
 #endif

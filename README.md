@@ -17,3 +17,7 @@
 ### 3. Quick sort - 3-quick_sort.c, 3-O
 	Function that sorts an array of integers in ascending order using the Quick sort algorithm.
 	The file 3-O contains the big O notations of the time complexity of the Quick sort algorithm
+
+### 103. Merge Sort - 103-merge_sort.c, 103-O
+	Function that sorts an array of integers in ascending order using the Merge Sort algorithm.
+	The file 103-O contains the big O notations of the time complexity of the Merge Sort algorithm.
