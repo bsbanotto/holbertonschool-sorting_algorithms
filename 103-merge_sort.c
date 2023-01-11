@@ -99,9 +99,11 @@ void recur_split(int *temp_array, int start, int end, int *array)
  */
 void time_to_merge(int *array, int start, int mid, int end, int *temp_array)
 {
-	int i = start; /*Used to index through left and right runs*/
-	int j = mid; /*Used as end point for left run*/
-	int k = start; /*Used to index through temp_array, which is sorted*/
+	int i = start; /*Used to index through left run*/
+	int j = mid; /*Used to index through right run*/
+
+	/*Used to index through temp_array as left and right runs are sorted*/
+	int k = start;
 
 	for (k = start; k < end; k++)
 	{
