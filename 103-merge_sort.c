@@ -19,7 +19,7 @@ void merge_sort(int *array, size_t size)
 }
 
 /**
- * print_my_array - Prints an array between two indeces
+ * print_my_array - Prints an array between two indices
  * @array: Array to print
  * @start: Starting index of array to print
  * @end: Ending index of array to print
