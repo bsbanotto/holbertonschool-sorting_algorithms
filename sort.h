@@ -41,5 +41,6 @@ void merge_sort(int *array, size_t size);
 void print_my_array(int *array, int start, int end);
 void copy_array(int *array, int start_index, int end_index, int *temp_array);
 void recur_split(int *temp_array, int start, int end, int *array);
+void time_to_merge(int *array, int start, int mid, int end, int *temp_array);
 
 #endif
