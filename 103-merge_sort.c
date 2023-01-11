@@ -14,6 +14,7 @@ void merge_sort(int *array, size_t size)
 	/* print_my_array(array, 0, size / 2); */
 	copy_array(array, 0, size, temp_array);
 	print_my_array(temp_array, 0, size);
+	recur_split(temp_array, 0, size, array);
 	free(temp_array);
 }
 
@@ -28,9 +29,9 @@ void merge_sort(int *array, size_t size)
 
 void print_my_array(int *array, int start, int end)
 {
-	int i = start;
+	int i;
 
-	printf("Printed with helper function:\n");
+	printf("Printed with print_my_array:\n");
 
 	for (i = start; i < end; i++)
 	{
@@ -59,4 +60,25 @@ void copy_array(int *array, int start_index, int end_index, int *temp_array)
 
 	for (i = start_index; i < end_index; i++)
 		temp_array[i] = array[i];
+}
+
+/**
+ * recur_split - Splits the array recursively until it is of size 1
+ * @temp_array: Temporary array, copy of given array
+ * @array: Given array to sort
+ * @start: Starting index of array to split
+ * @end: End index of array to split
+ */
+void recur_split(int *temp_array, int start, int end, int *array)
+{
+	int mid = (end + start) / 2;
+
+	if (end - start <= 1) /*Gets out if array has length of 1*/
+	{
+		print_my_array(array, start, end);
+		return;
+	}
+
+	recur_split(array, start, mid, temp_array);
+	recur_split(array, mid, end, temp_array);
 }
