@@ -18,6 +18,10 @@
 	Function that sorts an array of integers in ascending order using the Quick sort algorithm.
 	The file 3-O contains the big O notations of the time complexity of the Quick sort algorithm
 
-### 103. Merge Sort - 103-merge_sort.c, 103-O
-	Function that sorts an array of integers in ascending order using the Merge Sort algorithm.
-	The file 103-O contains the big O notations of the time complexity of the Merge Sort algorithm.
+### 103. Merge sort - 103-merge_sort.c, 103-O
+	Function that sorts an array of integers in ascending order using the top-down Merge sort algorithm.
+	The file 103-O contains the big O notations of the time complexity of the Merge sort algorithm.
+
+### 104. Heap sort - 104-heap_sort.c, 104-O
+	Function that sorts an array of integers in ascending order using the sift-down Heap sort algorithm.
+	The file 104-O contains the big O notations of the time complexity of the Heap sort algorithm.
