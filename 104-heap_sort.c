@@ -14,12 +14,17 @@ void heap_sort(int *array, size_t size)
 
 	for (; i >= 0; i--)
 	{
-		heapify(array, size, i);
+		heapify(array, size, i, size);
 	}
 	for (; j >= 0; j--)
 	{
 		swap(&array[0], &array[j]);
-		heapify(array, j, 0);
+		if (j > 0)
+		{
+			/* printf("Print inside heap sort\n"); */
+			print_array(array, size);
+		}
+		heapify(array, size, 0, j);
 	}
 }
 
@@ -28,26 +33,27 @@ void heap_sort(int *array, size_t size)
  * @array: Array to turn into a binary heap
  * @size: Size of array to turn into a heap
  * @i: index of array element
+ * @value: value of root of tree
  *
  * Return: Void
  */
-void heapify(int *array, size_t size, int i)
+void heapify(int *array, int size, int i, int value)
 {
 	int largest = i;
 	int left = 2 * i + 1;
 	int right = 2 * i + 2;
-	int N = (int)(size);
 
-	if (left < N && array[left] > array[largest])
+	if (left < value && array[left] > array[largest])
 		largest = left;
 
-	if (right < N && array[right] > array[largest])
+	if (right < value && array[right] > array[largest])
 		largest = right;
 
 	if (largest != i)
 	{
 		swap(&array[i], &array[largest]);
-		heapify(array, size, largest);
+		print_array(array, size);
+		heapify(array, size, largest, value);
 	}
 }
 
