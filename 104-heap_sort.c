@@ -33,7 +33,7 @@ void heap_sort(int *array, size_t size)
  * @array: Array to turn into a binary heap
  * @size: Size of array to turn into a heap
  * @i: index of array element
- * @value: value of root of tree
+ * @value: index of root of node(s)
  *
  * Return: Void
  */
