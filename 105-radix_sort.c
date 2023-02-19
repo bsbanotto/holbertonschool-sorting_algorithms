@@ -22,8 +22,8 @@ void radix_sort(int *array, size_t  size)
 			if (place > 1)
 			{
 				print_array(array, size);
-				countingSort(array, size, place);
 			}
+			countingSort(array, size, place);
 			if (max / place < 10)
 				print_array(array, size);
 		}
@@ -68,10 +68,12 @@ void countingSort(int *array, int size, int place)
 	count = malloc(sizeof(array[0]) * size);
 
 	for (i = 1; i < size; i++)
+	{
 		if (((array[i] / place) % 10) > max)
 			max = array[i];
+	}
 
-	for (i = 0; i < max; i++)
+	for (i = 0; i < max; ++i)
 		count[i] = 0;
 
 	for (i = 0; i < size; i++)
