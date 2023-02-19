@@ -20,8 +20,10 @@ void radix_sort(int *array, size_t  size)
 		for (place = 1; max / place > 0; place *= 10)
 		{
 			if (place > 1)
-			print_array(array, size);
-			countingSort(array, size, place);
+			{
+				print_array(array, size);
+				countingSort(array, size, place);
+			}
 			if (max / place < 10)
 				print_array(array, size);
 		}
