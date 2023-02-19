@@ -31,11 +31,12 @@ void radix_sort(int *array, size_t size)
  * Return: Max in a given array
  */
 
-int getMax(int *array, int size)
+int getMax(int *array, size_t size)
 {
-	int max = array[0], i;
+	int max = array[0];
+	size_t i;
 
-	for (i = 1; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (array[i] > max)
 			max = array[i];
