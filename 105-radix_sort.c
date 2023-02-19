@@ -58,7 +58,7 @@ void countingSort(int *array, int size, int place)
 
 	max = (array[0] / place) % 10;
 	output = malloc(sizeof(array[0]) * 10192);
-	count = malloc(sizeof(array[0]) * 10192);
+	count = malloc(sizeof(array[0]) * 5096);
 
 	for (i = 1; i < size; i++)
 	{
