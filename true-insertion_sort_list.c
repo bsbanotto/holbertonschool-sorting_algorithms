@@ -42,6 +42,14 @@ void insertion_sort_list(listint_t **list)
 	}
 }
 
+/**
+ * move_to_loc - Moves a node
+ * @nodeToMove: Node we're moving
+ * @prevNode: Node before node we're moving
+ *
+ * Return: Void
+ */
+
 void move_to_loc(listint_t *nodeToMove, listint_t *prevNode)
 {
 	nodeToMove->next->prev = nodeToMove->prev;
@@ -51,6 +59,14 @@ void move_to_loc(listint_t *nodeToMove, listint_t *prevNode)
 	prevNode->next->prev = nodeToMove;
 	prevNode->next = nodeToMove;
 }
+
+/**
+ * move_to_head - Moves a node to head of a linked list
+ * @head: Pointer to head of list
+ * @nodeToMove: Node we want to move to the front
+ *
+ * Return: Void
+ */
 
 void move_to_head(listint_t *head, listint_t *nodeToMove)
 {
